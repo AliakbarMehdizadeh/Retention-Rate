@@ -1,0 +1,106 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 SELECT XX.date_joined as "Install Date", XX.installs as "Cohort Size",\
+100 *"d0%"/ CAST( XX.installs as DECIMAL) as "d0%",\
+100 *"d1%"/ CAST( XX.installs as DECIMAL) as "d1%",\
+100 *"d2%"/ CAST( XX.installs as DECIMAL) as "d2%", \
+100 *"d3%"/ CAST( XX.installs as DECIMAL) as "d3%",\
+100 *"d4%"/ CAST( XX.installs as DECIMAL) as "d4%",\
+100 *"d5%"/ CAST( XX.installs as DECIMAL) as "d5%",\
+100 *"d6%"/ CAST( XX.installs as DECIMAL) as "d6%",\
+100 *"d7%"/ CAST( XX.installs as DECIMAL) as "d7%",\
+100 *"d8%"/ CAST( XX.installs as DECIMAL) as "d8%",\
+100 *"d9%"/ CAST( XX.installs as DECIMAL) as "d9%",\
+100 *"d10%"/ CAST( XX.installs as DECIMAL) as "d10%",\
+100 *"d11%"/ CAST( XX.installs as DECIMAL) as "d11%",\
+100 *"d12%"/ CAST( XX.installs as DECIMAL) as "d12%", \
+100 *"d13%"/ CAST( XX.installs as DECIMAL) as "d13%",\
+100 *"d14%"/ CAST( XX.installs as DECIMAL) as "d14%",\
+100 *"d15%"/ CAST( XX.installs as DECIMAL) as "d15%",\
+100 *"d16%"/ CAST( XX.installs as DECIMAL) as "d16%",\
+100 *"d17%"/ CAST( XX.installs as DECIMAL) as "d17%",\
+100 *"d18%"/ CAST( XX.installs as DECIMAL) as "d18%",\
+100 *"d19%"/ CAST( XX.installs as DECIMAL) as "d19%",\
+100 *"d20%"/ CAST( XX.installs as DECIMAL) as "d20%",\
+100 *"d21%"/ CAST( XX.installs as DECIMAL) as "d21%",\
+100 *"d22%"/ CAST( XX.installs as DECIMAL) as "d22%", \
+100 *"d23%"/ CAST( XX.installs as DECIMAL) as "d23%",\
+100 *"d24%"/ CAST( XX.installs as DECIMAL) as "d24%",\
+100 *"d25%"/ CAST( XX.installs as DECIMAL) as "d25%",\
+100 *"d26%"/ CAST( XX.installs as DECIMAL) as "d26%",\
+100 *"d27%"/ CAST( XX.installs as DECIMAL) as "d27%",\
+100 *"d28%"/ CAST( XX.installs as DECIMAL) as "d28%",\
+100 *"d29%"/ CAST( XX.installs as DECIMAL) as "d29%",\
+100 *"d30%"/ CAST( XX.installs as DECIMAL) as "d30%"\
+FROM\
+(\
+    SELECT CAST("public"."account_customuser"."date_joined" AS date) AS "date_joined", count(*) AS "installs"\
+    FROM "public"."account_customuser"\
+    GROUP BY CAST("public"."account_customuser"."date_joined" AS date)\
+    ORDER BY CAST("public"."account_customuser"."date_joined" AS date) ASC\
+) XX,\
+(\
+    SELECT first_day, \
+        CAST( SUM(CASE WHEN day_number = 0 THEN 1 ELSE 0 END) as Float )  AS "d0%",\
+        CAST( SUM(CASE WHEN day_number = 1 THEN 1 ELSE 0 END) as Float )  AS "d1%",\
+        CAST( SUM(CASE WHEN day_number = 2 THEN 1 ELSE 0 END) as Float )  AS "d2%",\
+        CAST( SUM(CASE WHEN day_number = 3 THEN 1 ELSE 0 END) as Float )  AS "d3%",\
+        CAST( SUM(CASE WHEN day_number = 4 THEN 1 ELSE 0 END) as Float )  AS "d4%",\
+        CAST( SUM(CASE WHEN day_number = 5 THEN 1 ELSE 0 END) as Float )  AS "d5%",\
+        CAST( SUM(CASE WHEN day_number = 6 THEN 1 ELSE 0 END) as Float )  AS "d6%",\
+        CAST( SUM(CASE WHEN day_number = 7 THEN 1 ELSE 0 END) as Float )  AS "d7%",\
+        CAST( SUM(CASE WHEN day_number = 8 THEN 1 ELSE 0 END) as Float )  AS "d8%",\
+        CAST( SUM(CASE WHEN day_number = 9 THEN 1 ELSE 0 END) as Float )  AS "d9%",\
+        CAST( SUM(CASE WHEN day_number = 10 THEN 1 ELSE 0 END) as Float ) AS "d10%",\
+        CAST( SUM(CASE WHEN day_number = 11 THEN 1 ELSE 0 END) as Float ) AS "d11%",\
+        CAST( SUM(CASE WHEN day_number = 12 THEN 1 ELSE 0 END) as Float ) AS "d12%",\
+        CAST( SUM(CASE WHEN day_number = 13 THEN 1 ELSE 0 END) as Float ) AS "d13%",\
+        CAST( SUM(CASE WHEN day_number = 14 THEN 1 ELSE 0 END) as Float ) AS "d14%",\
+        CAST( SUM(CASE WHEN day_number = 15 THEN 1 ELSE 0 END) as Float ) AS "d15%",\
+        CAST( SUM(CASE WHEN day_number = 16 THEN 1 ELSE 0 END) as Float ) AS "d16%",\
+        CAST( SUM(CASE WHEN day_number = 17 THEN 1 ELSE 0 END) as Float ) AS "d17%",\
+        CAST( SUM(CASE WHEN day_number = 18 THEN 1 ELSE 0 END) as Float ) AS "d18%",\
+        CAST( SUM(CASE WHEN day_number = 19 THEN 1 ELSE 0 END) as Float ) AS "d19%",\
+        CAST( SUM(CASE WHEN day_number = 20 THEN 1 ELSE 0 END) as Float ) AS "d20%",\
+        CAST( SUM(CASE WHEN day_number = 21 THEN 1 ELSE 0 END) as Float ) AS "d21%",\
+        CAST( SUM(CASE WHEN day_number = 22 THEN 1 ELSE 0 END) as Float ) AS "d22%",\
+        CAST( SUM(CASE WHEN day_number = 23 THEN 1 ELSE 0 END) as Float ) AS "d23%",\
+        CAST( SUM(CASE WHEN day_number = 24 THEN 1 ELSE 0 END) as Float ) AS "d24%",\
+        CAST( SUM(CASE WHEN day_number = 25 THEN 1 ELSE 0 END) as Float ) AS "d25%",\
+        CAST( SUM(CASE WHEN day_number = 26 THEN 1 ELSE 0 END) as Float ) AS "d26%",\
+        CAST( SUM(CASE WHEN day_number = 27 THEN 1 ELSE 0 END) as Float ) AS "d27%",\
+        CAST( SUM(CASE WHEN day_number = 28 THEN 1 ELSE 0 END) as Float ) AS "d28%",\
+        CAST( SUM(CASE WHEN day_number = 29 THEN 1 ELSE 0 END) as Float ) AS "d29%",\
+        CAST( SUM(CASE WHEN day_number = 30 THEN 1 ELSE 0 END) as Float ) AS "d30%"\
+    \
+    FROM\
+    (\
+        SELECT a.writer_id,a.login_date,b.first_day AS first_day, a.login_date - b.first_day as day_number\
+        FROM\
+        (\
+            SELECT writer_id, created_at_date AS login_date\
+            FROM\
+            (\
+                SELECT CAST("public"."porsa_initialquestion"."created_at" AS date) AS "created_at_date", "public"."porsa_initialquestion"."writer_id" AS "writer_id"\
+                FROM "public"."porsa_initialquestion"\
+                GROUP BY writer_id,created_at_date\
+            ) log_table\
+            GROUP BY writer_id,login_date\
+        ) a,\
+        (\
+            SELECT ID, CAST("public"."account_customuser"."date_joined" AS date) AS first_day\
+            FROM "public"."account_customuser"\
+            GROUP BY ID\
+        ) b\
+        where a.writer_id=b.ID\
+    ) AS RetTable \
+    group by first_day\
+    order by first_day DESC\
+) YY\
+where XX.date_joined = YY.first_day\
+order by date_joined Desc}
